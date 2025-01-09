@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json.schemastore.org/chrome-manifest",
+  "action": {
+    "default_icon": {
+      "16": "favicon.svg",
+      "48": "favicon48.svg",
+      "128": "favicon128.svg"
+    }
+  },
+  "background": {
+    "service_worker": "bgserviceWorker.js"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "contentScript.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "description": "Extracts emails from the current page and displays them in a side panel.",
+  "icons": {
+    "16": "favicon.svg",
+    "48": "favicon48.svg",
+    "128": "favicon128.svg"
+  },
+  "manifest_version": 3,
+  "name": "Get Emails From Page",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "sidePanel",
+    "tabs"
+  ],
+  "version": "1.0"
+}
