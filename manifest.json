@@ -16,11 +16,18 @@
         "contentScript.js"
       ],
       "matches": [
-        "<all_urls>"
+        "https://squareup.*/*"
       ]
     }
   ],
+  "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+  },
   "description": "Extracts emails from the current page and displays them in a side panel.",
+  "host_permissions": [
+    "https://squareup.*/*"
+  ]
+  "manifest_version": 3,
   "icons": {
     "16": "favicon.svg",
     "48": "favicon48.svg",
